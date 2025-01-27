@@ -1,0 +1,13 @@
+.image-from-set(@prop; @path-1x) {
+    //fallback
+    @{prop}: @path-1x;
+
+    //responsive
+    @{prop}: image-set(@path-1x 1x);
+}
+
+@test: url("./img.png");
+
+.test {
+    .image-from-set(background-image, @test);
+}
